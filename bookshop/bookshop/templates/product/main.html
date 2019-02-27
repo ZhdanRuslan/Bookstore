@@ -3,7 +3,12 @@
 {% block body %}
 
 <main role="main" class="container">
-    <h1>Hello!!!</h1>
+    <h1>Hello!</h1>
+    {% for book in all_books %}
+    <div>
+        <p>{{book}}</p>
+    </div>
+    {% endfor %}
 
 </main>
 
