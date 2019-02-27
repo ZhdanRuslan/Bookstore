@@ -19,3 +19,8 @@ class Book(models.Model):
 
     def __str__(self):
         return f'title: {self.title} price: {self.price} ISBN: {self.isbn} '
+
+
+class WebRequest(models.Model):
+    req = models.URLField()
+    created = models.DateTimeField(auto_now=True)
