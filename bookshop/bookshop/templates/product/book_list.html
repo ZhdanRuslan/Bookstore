@@ -18,12 +18,12 @@
     <tr>
         <td>{{ book.title }}</td>
         <td>{{ book.isbn }}</td>
-        <td><a href="{% url " book_view" book.id %}">view</a></td>
-        <td><a href="{% url " book_edit" book.id %}">edit</a></td>
-        <td><a href="{% url " book_delete" book.id %}">delete</a></td>
+        <td><a href="{% url "book_view" book.id %}">view</a></td>
+        <td><a href="{% url "book_edit" book.id %}">edit</a></td>
+        <td><a href="{% url "book_delete" book.id %}">delete</a></td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
 <br>
-<a href="{% url " book_new" %}">New</a>
+<a href="{% url "book_new" %}">New</a>
