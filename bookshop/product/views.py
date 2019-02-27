@@ -8,9 +8,6 @@ from .models import Book
 def index(request):
     ctx = {}
     all_books = Book.objects.all()
-    data = serializers.serialize("json", Book.objects.all())
-    with open('bookshop/product/fixtures/test_data_books.json', 'a') as f:
-        f.write(data)
     ctx['all_books'] = all_books
     return render(request, 'product/main.html', ctx)
 
