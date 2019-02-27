@@ -1,13 +1,13 @@
 from django.urls import path
 
-from .views import index, book_view, book_create, book_update, book_delete, book_list, get_last_ten
+from .views import Index, BookView, BookCreate, BookUpdate, BookDelete, BookList, LastRequests
 
 urlpatterns = [
-    path('', index),
-    path('last', get_last_ten, name='last'),
-    path('books', book_list, name='book_list'),
-    path('view/<int:pk>', book_view, name='book_view'),
-    path('new', book_create, name='book_new'),
-    path('edit/<int:pk>', book_update, name='book_edit'),
-    path('delete/<int:pk>', book_delete, name='book_delete'),
+    path('', Index.as_view(), name='index'),
+    path('last', LastRequests.as_view(), name='last'),
+    path('books', BookList.as_view(), name='book_list'),
+    path('view/<int:pk>', BookView.as_view(), name='book_view'),
+    path('new', BookCreate.as_view(), name='book_new'),
+    path('edit/<int:pk>', BookUpdate.as_view(), name='book_edit'),
+    path('delete/<int:pk>', BookDelete.as_view(), name='book_delete'),
 ]
