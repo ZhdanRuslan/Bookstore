@@ -1,11 +1,12 @@
 [
   {
     "model": "product.book",
-    "pk": 2,
+    "pk": 11,
     "fields": {
-      "title": "title_1",
-      "isbn": "11111111",
-      "price": 1.0,
+      "publish_date": "2019-02-01",
+      "title": "book1",
+      "isbn": 1111,
+      "price": "1111.00",
       "authors": [
         2
       ]
@@ -13,11 +14,12 @@
   },
   {
     "model": "product.book",
-    "pk": 3,
+    "pk": 12,
     "fields": {
-      "title": "title_2",
-      "isbn": "22222222",
-      "price": 2.0,
+      "publish_date": "2019-02-07",
+      "title": "book2",
+      "isbn": 2222,
+      "price": "2222.00",
       "authors": [
         3
       ]
@@ -25,11 +27,12 @@
   },
   {
     "model": "product.book",
-    "pk": 4,
+    "pk": 13,
     "fields": {
-      "title": "title_3",
-      "isbn": "33333333",
-      "price": 3.0,
+      "publish_date": "2019-06-04",
+      "title": "book3",
+      "isbn": 3333,
+      "price": "3333.00",
       "authors": [
         4
       ]
@@ -37,11 +40,12 @@
   },
   {
     "model": "product.book",
-    "pk": 5,
+    "pk": 14,
     "fields": {
-      "title": "title_4",
-      "isbn": "44444444",
-      "price": 4.0,
+      "publish_date": "2019-02-13",
+      "title": "book4",
+      "isbn": 4444,
+      "price": "4444.00",
       "authors": [
         5
       ]
@@ -49,11 +53,12 @@
   },
   {
     "model": "product.book",
-    "pk": 6,
+    "pk": 15,
     "fields": {
-      "title": "title_5",
-      "isbn": "55555555",
-      "price": 5.0,
+      "publish_date": "2019-02-05",
+      "title": "book5",
+      "isbn": 5555,
+      "price": "5555.00",
       "authors": [
         6
       ]

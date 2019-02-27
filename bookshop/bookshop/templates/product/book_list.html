@@ -8,6 +8,7 @@
     <tr>
         <th>Name</th>
         <th>Pages</th>
+        <th>Date</th>
         <th>View</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -18,6 +19,7 @@
     <tr>
         <td>{{ book.title }}</td>
         <td>{{ book.isbn }}</td>
+        <td>{{ book.publish_date }}</td>
         <td><a href="{% url "book_view" book.id %}">view</a></td>
         <td><a href="{% url "book_edit" book.id %}">edit</a></td>
         <td><a href="{% url "book_delete" book.id %}">delete</a></td>

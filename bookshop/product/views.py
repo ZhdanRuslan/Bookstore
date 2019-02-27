@@ -1,5 +1,6 @@
-from django.forms import ModelForm
+from django.core import serializers
 from django.shortcuts import render, get_object_or_404, redirect
+from .forms import BookForm
 
 from .models import Book
 
@@ -7,14 +8,11 @@ from .models import Book
 def index(request):
     ctx = {}
     all_books = Book.objects.all()
+    data = serializers.serialize("json", Book.objects.all())
+    with open('bookshop/product/fixtures/test_data_books.json', 'a') as f:
+        f.write(data)
     ctx['all_books'] = all_books
     return render(request, 'product/main.html', ctx)
-
-
-class BookForm(ModelForm):
-    class Meta:
-        model = Book
-        fields = ['title', 'authors', 'isbn', 'price']
 
 
 def book_list(request, template_name='product/book_list.html'):
