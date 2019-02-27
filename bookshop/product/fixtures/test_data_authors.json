@@ -1,62 +1,47 @@
 [
   {
-    "model": "product.book",
+    "model": "product.author",
     "pk": 2,
     "fields": {
-      "title": "title_1",
-      "isbn": "11111111",
-      "price": 1.0,
-      "authors": [
-        2
-      ]
+      "first_name": "name_1",
+      "last_name": "surname_1",
+      "email": "email_1@gmail.com"
     }
   },
   {
-    "model": "product.book",
+    "model": "product.author",
     "pk": 3,
     "fields": {
-      "title": "title_2",
-      "isbn": "22222222",
-      "price": 2.0,
-      "authors": [
-        3
-      ]
+      "first_name": "name_2",
+      "last_name": "surname_2",
+      "email": "email_2@gmail.com"
     }
   },
   {
-    "model": "product.book",
+    "model": "product.author",
     "pk": 4,
     "fields": {
-      "title": "title_3",
-      "isbn": "33333333",
-      "price": 3.0,
-      "authors": [
-        4
-      ]
+      "first_name": "name_3",
+      "last_name": "surname_3",
+      "email": "email_3@gmail.com"
     }
   },
   {
-    "model": "product.book",
+    "model": "product.author",
     "pk": 5,
     "fields": {
-      "title": "title_4",
-      "isbn": "44444444",
-      "price": 4.0,
-      "authors": [
-        5
-      ]
+      "first_name": "name_4",
+      "last_name": "surname_4",
+      "email": "email_4@gmail.com"
     }
   },
   {
-    "model": "product.book",
+    "model": "product.author",
     "pk": 6,
     "fields": {
-      "title": "title_5",
-      "isbn": "55555555",
-      "price": 5.0,
-      "authors": [
-        6
-      ]
+      "first_name": "name_5",
+      "last_name": "surname_5",
+      "email": "email_5@gmail.com"
     }
   }
 ]
