@@ -1,14 +1,24 @@
 {% extends 'index.html' %}
 
 {% block body %}
-
+<a href="/">Main</a><br>
+<a href="/last">last 10 requests</a>
 <main role="main" class="container">
     <h1>Hello!</h1>
+    <form>
+        <input type="submit" name="asc_button" value="ASC"></button>
+        <input type="submit" name="desc_button" value="DESC"></button>
+    </form>
+    <form>
+    </form>
     {% for book in all_books %}
     <div>
         <p>{{book}}</p>
     </div>
     {% endfor %}
+
+
+
     <a href="/books">Manage books</a>
     <br>
     <br>

@@ -18,9 +18,13 @@ class Book(models.Model):
     publish_date = models.DateField(editable=True, auto_created=True)
 
     def __str__(self):
-        return f'title: {self.title} price: {self.price} ISBN: {self.isbn} '
+        return f'title: {self.title} price: {self.price} ISBN: {self.isbn} date \
+                {self.publish_date.strftime("%Y-%m-%d %H:%M:%S")}'
 
 
 class WebRequest(models.Model):
-    req = models.URLField()
+    req = models.TextField()
     created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.req} date {self.created.strftime("%Y-%m-%d %H:%M:%S")}'
