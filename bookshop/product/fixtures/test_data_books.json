@@ -1,0 +1,47 @@
+[
+  {
+    "model": "product.author",
+    "pk": 2,
+    "fields": {
+      "first_name": "name_1",
+      "last_name": "surname_1",
+      "email": "email_1@gmail.com"
+    }
+  },
+  {
+    "model": "product.author",
+    "pk": 3,
+    "fields": {
+      "first_name": "name_2",
+      "last_name": "surname_2",
+      "email": "email_2@gmail.com"
+    }
+  },
+  {
+    "model": "product.author",
+    "pk": 4,
+    "fields": {
+      "first_name": "name_3",
+      "last_name": "surname_3",
+      "email": "email_3@gmail.com"
+    }
+  },
+  {
+    "model": "product.author",
+    "pk": 5,
+    "fields": {
+      "first_name": "name_4",
+      "last_name": "surname_4",
+      "email": "email_4@gmail.com"
+    }
+  },
+  {
+    "model": "product.author",
+    "pk": 6,
+    "fields": {
+      "first_name": "name_5",
+      "last_name": "surname_5",
+      "email": "email_5@gmail.com"
+    }
+  }
+]
