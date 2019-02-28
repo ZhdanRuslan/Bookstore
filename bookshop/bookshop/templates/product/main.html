@@ -24,7 +24,11 @@
         {% for book in all_books %}
         <tr>
             <td>{{ book.title }}</td>
-            <td>{{ book.authors }}</td>
+            <td>
+                {% for author in book.authors.all %}
+                {{ author.first_name}}
+                {% endfor %}
+            </td>
             <td>{{ book.price }}</td>
             <td>{{ book.publish_date }}</td>
             <td>{{ book.isbn }}</td>
