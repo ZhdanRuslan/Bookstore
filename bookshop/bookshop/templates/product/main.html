@@ -1,28 +1,40 @@
 {% extends 'index.html' %}
 
 {% block body %}
-<a href="/">Main</a><br>
-<a href="/last">last 10 requests</a>
+<div class="container">
+    <a href="/" class="btn btn-info" role="button">To main page</a>
+    <a href="/last" class="btn btn-info" role="button">Last requests</a>
+    <a href="/?asc_button=ASC" class="btn btn-info" role="button" name="asc_button" value="ASC">Sort by ASC</a>
+    <a href="/?desc_button=DESC" class="btn btn-info" role="button" name="desc_button" value="DESC">Sort by DESC</a>
+</div>
+
 <main role="main" class="container">
-    <h1>Hello!</h1>
-    <form>
-        <input type="submit" name="asc_button" value="ASC"></button>
-        <input type="submit" name="desc_button" value="DESC"></button>
-    </form>
-    <form>
-    </form>
-    {% for book in all_books %}
-    <div>
-        <p>{{book}}</p>
-    </div>
-    {% endfor %}
 
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>ISBN</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in all_books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.authors }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.publish_date }}</td>
+            <td>{{ book.isbn }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-
-    <a href="/books">Manage books</a>
-    <br>
-    <br>
-    <a href="/admin">Admin panel</a>
+    <a href="/books" class="btn btn-info" role="button">Manage Books</a>
+    <a href="/admin" class="btn btn-info" role="button">Anmin panel</a>
 
 </main>
 

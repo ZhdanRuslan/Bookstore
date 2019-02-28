@@ -4,19 +4,35 @@
 
 {% block body %}
 
-<a href="/">Main</a>
+<div class="container">
+    <a href="/" class="btn btn-info" role="button">To main page</a>
+</div>
+
 <main role="main" class="container">
-    <h1>Hello!</h1>
-    {% for req in last_ten %}
-    <div>
-        <p>{{req}}</p>
-    </div>
-    {% endfor %}
-    <a href="/books">Manage books</a>
-    <br>
-    <br>
-    <a href="/admin">Admin panel</a>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Reuest</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for req in last_ten %}
+        <tr>
+            <td>{{ req.req }}</td>
+            <td>{{ req.created }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 </main>
+
+
+<a href="/books" class="btn btn-info" role="button">Manage Books</a>
+<a href="/admin" class="btn btn-info" role="button">Anmin panel</a>
+
 
 {% endblock %}

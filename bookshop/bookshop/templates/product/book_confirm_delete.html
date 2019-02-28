@@ -1,5 +1,20 @@
-<h1>Book Delete</h1>
-<form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
-    <input type="submit" value="Submit"/>
-</form>
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="container">
+    <a href="/" class="btn btn-info" role="button">To main page</a>
+</div>
+
+<main role="main" class="container">
+    <form method="post">
+        {% csrf_token %}
+        <h3><b>Are you sure you want to delete "{{ object.title }}"?</b></h3>
+        <input type="submit" value="Ok" class="btn btn-danger"/>
+    </form>
+
+</main>
+
+<!--<h1>Book Delete</h1>-->
+
+
+{% endblock %}

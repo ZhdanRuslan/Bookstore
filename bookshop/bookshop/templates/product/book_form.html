@@ -1,7 +1,23 @@
-<h1>Book Edit</h1>
-<form method="post">{% csrf_token %}
-    {{ form.media }}
-    {{ form.as_p }}
+{% extends 'index.html' %}
+{% block body %}
 
-    <input type="submit" value="Submit"/>
-</form>
+<div class="container">
+    <a href="/" class="btn btn-info" role="button">To main page</a>
+</div>
+
+<main role="main" class="container">
+    <div class="container">
+        <form method="post">
+            <div class="form-group">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table}}
+                </table>
+            </div>
+            <input class="btn btn-info" type="submit" value="Create"/>
+        </form>
+    </div>
+</main>
+
+
+{% endblock %}

@@ -13,7 +13,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=255)
     authors = models.ManyToManyField(Author)
-    isbn = models.PositiveIntegerField(default=0)
+    isbn = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     publish_date = models.DateField(editable=True, auto_created=True)
 

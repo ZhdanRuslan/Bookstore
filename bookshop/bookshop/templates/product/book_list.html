@@ -1,14 +1,18 @@
-<h1>Books</h1>
+{% extends 'index.html' %}
+{% block body %}
 
-<a href="/">Main Page</a>
-
-<table border="1">
-    <br>
+<div class="container">
+    <a href="/" class="btn btn-info" role="button">To main page</a>
+</div>
+<main role="main" class="container">
+    <table class="table">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Pages</th>
+        <th>Title</th>
+        <th>Authors</th>
+        <th>Price</th>
         <th>Date</th>
+        <th>ISBN</th>
         <th>View</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -18,8 +22,10 @@
     {% for book in object_list %}
     <tr>
         <td>{{ book.title }}</td>
-        <td>{{ book.isbn }}</td>
+        <td>{{ book.authors }}</td>
+        <td>{{ book.price }}</td>
         <td>{{ book.publish_date }}</td>
+        <td>{{ book.isbn }}</td>
         <td><a href="{% url "book_view" book.id %}">view</a></td>
         <td><a href="{% url "book_edit" book.id %}">edit</a></td>
         <td><a href="{% url "book_delete" book.id %}">delete</a></td>
@@ -27,5 +33,8 @@
     {% endfor %}
     </tbody>
 </table>
-<br>
-<a href="{% url "book_new" %}">New</a>
+</main>
+
+<a href="{% url "book_new" %}" class="btn btn-info" role="button">Create Book</a>
+
+{% endblock %}

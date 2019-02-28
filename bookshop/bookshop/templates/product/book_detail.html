@@ -1,3 +1,35 @@
-<h1>Book Details</h1>
-<h2>Name: {{object.title}}</h2>
-ISBN: {{ object.isbn }}
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="container">
+    <a href="/" class="btn btn-info" role="button">To main page</a>
+</div>
+
+<main role="main" class="container">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>ISBN</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{object.title}}</td>
+            <td>{{object.authors}}</td>
+            <td>{{object.price}}</td>
+            <td>{{object.publish_date}}</td>
+            <td>{{object.isbn}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</main>
+
+
+{% endblock %}
