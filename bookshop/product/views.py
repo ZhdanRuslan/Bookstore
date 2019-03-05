@@ -1,19 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 
-import logging
-
 from .forms import BookForm
 from .models import Book, WebRequest
-
-logger = logging.getLogger(__name__)
-logging.basicConfig(filename='bookshop/product/logs/app_logs.log',level=logging.INFO)
 
 
 class BaseView(View):
     @staticmethod
     def write_request(request):
-        WebRequest.objects.create(req=request)
+        WebRequest.objects.create()
 
 
 class Index(BaseView):
@@ -61,7 +56,6 @@ class BookCreate(BaseView):
 
     def get(self, request):
         BaseView.write_request(request)
-        logger.info('Start to create book.')
         form = BookForm(request.POST or None)
         self.ctx['form'] = form
         return render(request, self.template_name, self.ctx)
@@ -71,7 +65,6 @@ class BookCreate(BaseView):
         form = BookForm(request.POST or None)
         if form.is_valid():
             form.save()
-            logger.info('Book was created.')
             return redirect('book_list')
 
 
@@ -81,7 +74,6 @@ class BookUpdate(BaseView):
 
     def get(self, request, pk):
         BaseView.write_request(request)
-        logger.info('Start editing book.')
         book = get_object_or_404(Book, pk=pk)
         form = BookForm(request.POST or None, instance=book)
         self.ctx['form'] = form
@@ -93,7 +85,6 @@ class BookUpdate(BaseView):
         form = BookForm(request.POST or None, instance=book)
         if form.is_valid():
             form.save()
-            logger.info('Book was edited.')
             return redirect('book_list')
 
 
@@ -112,7 +103,6 @@ class BookDelete(BaseView):
         book = get_object_or_404(Book, pk=pk)
         if request.method == 'POST':
             book.delete()
-            logger.info('Book was deleted.')
             return redirect('book_list')
 
 
